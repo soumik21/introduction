@@ -15,7 +15,7 @@ public class checkbox {
 	     //System.out.println(driver.findElement(By.cssSelector("input[id*='friendsandfamily']")).isSelected());
 	     driver.findElement(By.cssSelector("input[id*='friendsandfamily']")).click();
 	   Assert.assertTrue(driver.findElement(By.cssSelector("input[id*='friendsandfamily']")).isSelected());
-		System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
+		 System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
 
 	}
 
