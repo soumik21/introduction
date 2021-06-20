@@ -10,13 +10,15 @@ public class actiondemo {
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-	     WebDriver driver = new ChromeDriver();
-	     driver.manage().window().maximize();
-	     driver.get("https://www.amazon.in/");
-	     Actions a = new Actions(driver);
-	     
-	     a.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello").doubleClick().build().perform();
-	     a.moveToElement(driver.findElement(By.cssSelector("a[id='nav-link-accountList']"))).contextClick().build().perform();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.amazon.in/");
+		Actions a = new Actions(driver);
+
+		a.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello")
+				.doubleClick().build().perform();
+		a.moveToElement(driver.findElement(By.cssSelector("a[id='nav-link-accountList']"))).contextClick().build()
+				.perform();
 	}
 
 }

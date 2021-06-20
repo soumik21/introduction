@@ -14,7 +14,7 @@ public class scope {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		 WebDriverWait w = new WebDriverWait(driver,5);
+		WebDriverWait w = new WebDriverWait(driver, 5);
 		driver.manage().window().maximize();
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		System.out.println(driver.findElements(By.tagName("a")).size());
@@ -22,23 +22,19 @@ public class scope {
 		System.out.println(footer.findElements(By.tagName("a")).size());
 		WebElement footercoloumn1 = driver.findElement(By.xpath("//table/tbody/tr/td[1]/ul"));
 		System.out.println(footercoloumn1.findElements(By.tagName("a")).size());
-		for(int i=1 ; i<footercoloumn1.findElements(By.tagName("a")).size(); i++)
-		{
-			String clickonlink = Keys.chord(Keys.CONTROL,Keys.ENTER);
+		for (int i = 1; i < footercoloumn1.findElements(By.tagName("a")).size(); i++) {
+			String clickonlink = Keys.chord(Keys.CONTROL, Keys.ENTER);
 			footercoloumn1.findElements(By.tagName("a")).get(i).sendKeys(clickonlink);
 			Thread.sleep(5000);
 		}
-			Set<String> abd = driver.getWindowHandles();
-			Iterator<String> it = abd.iterator();
-		
-			while(it.hasNext())
-			{
-				driver.switchTo().window(it.next());
-				System.out.println(driver.getTitle());
-			}
-			
-		
-		
+		Set<String> abd = driver.getWindowHandles();
+		Iterator<String> it = abd.iterator();
+
+		while (it.hasNext()) {
+			driver.switchTo().window(it.next());
+			System.out.println(driver.getTitle());
+		}
+
 	}
 
 }

@@ -6,31 +6,27 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class assignment8 {
-	
+
 	WebDriver driver = null;
-	
+
 	@Parameters("browsername")
-    @BeforeTest
-    public void setup(String browsername)
-    {
-    	if(browsername.equalsIgnoreCase("chrome"))
-    	{
-    		System.setProperty("webdriver.chrome.driver", "/driver/chromedriver.exe");
-    		WebDriver driver = new ChromeDriver();
-    	}
-    	else if(browsername.equalsIgnoreCase("firefox"))
-    	{
-    		System.setProperty("webdriver.chrome.driver", "/driver/geckodriver.exe");
-    		WebDriver driver = new ChromeDriver();
-    	}
-    }
-   
-	 @Test
+	@BeforeTest
+	public void setup(String browsername) {
+		if (browsername.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", "/driver/chromedriver.exe");
+			driver = new ChromeDriver();
+		} else if (browsername.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.chrome.driver", "/driver/geckodriver.exe");
+			driver = new ChromeDriver();
+		}
+	}
+
+	@Test
 	public void main(String[] args) {
 		// TODO Auto-generated method stub
-		//System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		//WebDriver driver = new ChromeDriver();
-		 
+		// System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		// WebDriver driver = new ChromeDriver();
+
 		driver.manage().window().maximize();
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		int row = driver.findElements(By.cssSelector(".table-display tr")).size();

@@ -14,16 +14,15 @@ public class scrollpage {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		 
+
 		driver.manage().window().maximize();
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
-		JavascriptExecutor js = (JavascriptExecutor)driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 		js.executeScript("document.querySelector('.tableFixHead').scrollTop=500");
 		List<WebElement> values = driver.findElements(By.cssSelector(".tableFixHead td:nth-child(4)"));
 		int sum = 0;
-		for(int i=0 ; i<values.size() ; i++)
-		{
+		for (int i = 0; i < values.size(); i++) {
 			sum = sum + Integer.parseInt(values.get(i).getText());
 		}
 		System.out.println(sum);

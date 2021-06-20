@@ -8,7 +8,7 @@ public class assignment9 {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		 
+
 		driver.manage().window().maximize();
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 		driver.findElement(By.cssSelector(".inputs.ui-autocomplete-input")).click();
